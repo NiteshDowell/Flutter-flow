@@ -52,7 +52,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       options: FFButtonOptions(
                         width: 130,
                         height: 40,
-                        color: FlutterFlowTheme.of(context).primaryColor,
+                        color: Color(0xFF3021B7),
                         textStyle:
                             FlutterFlowTheme.of(context).subtitle2.override(
                                   fontFamily: 'Poppins',
