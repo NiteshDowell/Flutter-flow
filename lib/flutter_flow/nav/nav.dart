@@ -39,7 +39,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : HomePageWidget(),
+          : LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -54,17 +54,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : HomePageWidget(),
+              : LoginWidget(),
           routes: [
             FFRoute(
               name: 'HomePage',
               path: 'homePage',
-              builder: (context, params) => HomePageWidget(),
+              builder: (context, params) => HomePageWidget(
+                qrid: params.getParam('qrid', ParamType.String),
+              ),
             ),
             FFRoute(
               name: 'menu',
               path: 'menu',
-              builder: (context, params) => MenuWidget(),
+              builder: (context, params) => MenuWidget(
+                id: params.getParam('id', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'login',
+              path: 'login',
+              builder: (context, params) => LoginWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

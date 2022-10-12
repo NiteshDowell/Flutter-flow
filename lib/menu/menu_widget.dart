@@ -6,7 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MenuWidget extends StatefulWidget {
-  const MenuWidget({Key? key}) : super(key: key);
+  const MenuWidget({
+    Key? key,
+    this.id,
+  }) : super(key: key);
+
+  final String? id;
 
   @override
   _MenuWidgetState createState() => _MenuWidgetState();
@@ -265,14 +270,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                                                 final textMenuDataResponse =
                                                     snapshot.data!;
                                                 return Text(
-                                                  valueOrDefault<String>(
-                                                    getJsonField(
-                                                      textMenuDataResponse
-                                                          .jsonBody,
-                                                      r'''$.normal.data[0][0].dish_name''',
-                                                    ).toString(),
-                                                    'dish_name',
-                                                  ),
+                                                  widget.id!,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .subtitle1

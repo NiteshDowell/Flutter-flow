@@ -42,8 +42,12 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 
-
-
+	<key>NSLocationWhenInUseUsageDescription</key>
+      <string>In order to search nearby, this app requires access to your current location.</string>
+	<key>NSCameraUsageDescription</key>
+      <string>This app needs camera permission</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+      <string>This app needs location permission</string>
 
 
 	<key>UILaunchStoryboardName</key>
